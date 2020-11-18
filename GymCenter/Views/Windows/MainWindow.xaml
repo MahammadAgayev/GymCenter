@@ -1,0 +1,65 @@
+﻿<Window x:Class="GymCenter.Views.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymCenter.Views.Windows"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Border CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <TextBlock FontSize="60" VerticalAlignment="Center" Text="Welcome to GymCenter App" Foreground="Orange" Background="DarkBlue"></TextBlock>
+            </StackPanel>
+
+            <DockPanel Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid VerticalAlignment="Top" Grid.Column="0">
+
+                        <Line Stretch="Fill" X2="1" VerticalAlignment="Top" Stroke="Black"></Line>
+
+                        <StackPanel HorizontalAlignment="Center" Width="200" Height="350">
+
+                            <Button Width="200" Height="60" Command="{Binding ShowPackages}" Content="Packages" Foreground="Black" FontSize="20"   Margin="0 10 0 10">
+                                <Button.BitmapEffect>
+                                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="10" Opacity="0.5" />
+                                </Button.BitmapEffect>
+                            </Button>
+
+                            <Button Width="200" Height="60" Command="{Binding ShowServices}"  Content="Services" Foreground="Black" FontSize="20"   Margin="0 10 0 10">
+                                <Button.BitmapEffect>
+                                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="10" Opacity="0.5" />
+                                </Button.BitmapEffect>
+                            </Button>
+
+                            <Button Width="200" Height="60"  Content="Discounts" Foreground="Black" FontSize="20"   Margin="0 10 0 10">
+                                <Button.BitmapEffect>
+                                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="10" Opacity="0.5" />
+                                </Button.BitmapEffect>
+                            </Button>
+
+                        </StackPanel>
+                       
+                    </Grid>
+                </Grid>
+
+                <Border Grid.Row="1" >
+                    <Grid Name="grdCenter">
+                        
+                    </Grid>
+                </Border>
+            </DockPanel>
+
+        </Grid>
+    </Border>
+</Window>
