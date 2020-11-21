@@ -18,7 +18,7 @@ namespace GymCenter.Core.DataAccess.SqlSever
 
         public IServiceRepository ServiceRepository => new SqlServiceRepository(_connectionString);
 
-        public IPackageServiceRepository PackageServiceRepository => throw new System.NotImplementedException();
+        public IPackageServiceRepository PackageServiceRepository => new SqlPackageServiceRepository(_connectionString);
 
         public IDiscountForPackageRepository DiscountForPackageRepository => throw new System.NotImplementedException();
 

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\SqlSever\SqlPackageRepository.cs" />
+    <Compile Include="DataAccess\SqlSever\SqlPackageServiceRepository.cs" />
     <Compile Include="DataAccess\SqlSever\SqlRepositoryBase.cs" />
     <Compile Include="DataAccess\SqlSever\SqlServiceRepository.cs" />
     <Compile Include="DataAccess\SqlSever\SqlUnitWork.cs" />

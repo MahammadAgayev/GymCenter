@@ -11,7 +11,23 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
-        
+
+        <DockPanel Grid.Row="0">
+            <Border HorizontalAlignment="Left" Width="50" Height="30" Margin="20">
+                <Button Content="Add" Command="{Binding OpenSavePackage}">
+                </Button>
+            </Border>
+            <Border HorizontalAlignment="Left" Width="50" Height="30" Margin="20">
+                <Button Content="Edit" Command="{Binding OpenEditPackage}">
+                </Button>
+            </Border>
+            <Border HorizontalAlignment="Left" Width="50" Height="30" Margin="20">
+                <Button Content="Delete" Command="{Binding DeletePackage}">
+                </Button>
+            </Border>
+        </DockPanel>
+
+
         <ListView Grid.Row="2" x:Name="mainlist" 
                   ItemsSource="{Binding PackageModels}" SelectedItem="{Binding SelectedPackage}">
             <ListView.View>

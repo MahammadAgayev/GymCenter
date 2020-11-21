@@ -9,7 +9,7 @@ namespace GymCenter.ViewModels
     {
         public MainViewModel()
         {
-            ShowPackages = new ShowPackagesCommand(this);
+            ShowPackages = new ShowPackagesCommand(this, new Managers.PackageManager());
             ShowServices = new ShowServiceCommand(this, new Managers.ServiceManager());
         }
 

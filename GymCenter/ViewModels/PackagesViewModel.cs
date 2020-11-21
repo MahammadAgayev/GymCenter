@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows.Media;
-using GymCenter.Core;
+using System.Windows.Input;
+using GymCenter.Commands.PackageCommands;
 using GymCenter.Models.PackageModels;
 
 namespace GymCenter.ViewModels
@@ -11,7 +11,13 @@ namespace GymCenter.ViewModels
 
         public PackagesViewModel()
         {
+            OpenSavePackage = new OpenSavePackageViewCommand(this, new Managers.PackageManager());
+            OpenEditPackage = new OpenEditPackageViewCommand(this, new Managers.PackageManager());
         }
+
+        public ICommand OpenSavePackage { get; set; }
+        public ICommand OpenEditPackage { get; set; }
+        public ICommand DeletePackage { get; set; }
 
         public PackageModel SelectedPackage { get; set; }
     }

@@ -64,6 +64,10 @@
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\ConfigurationCommands\SaveCommand.cs" />
     <Compile Include="Commands\LoginCommands\LoginCommand.cs" />
+    <Compile Include="Commands\PackageCommands\BaseOpenPackageCommand.cs" />
+    <Compile Include="Commands\PackageCommands\OpenEditPackageViewCommand.cs" />
+    <Compile Include="Commands\PackageCommands\OpenSavePackageViewCommand.cs" />
+    <Compile Include="Commands\PackageCommands\SavePackageCommand.cs" />
     <Compile Include="Commands\ServiceCommands\OpenEditServiceViewCommand.cs" />
     <Compile Include="Commands\ServiceCommands\OpenSaveServiceViewCommand.cs" />
     <Compile Include="Commands\MainCommands\ShowPackagesCommand.cs" />
@@ -72,9 +76,11 @@
     <Compile Include="Commands\ServiceCommands\BaseServiceCommand.cs" />
     <Compile Include="Commands\ServiceCommands\DeleteServiceCommand.cs" />
     <Compile Include="Managers\ConfigManager.cs" />
+    <Compile Include="Managers\PackageManager.cs" />
     <Compile Include="Managers\ServiceManager.cs" />
     <Compile Include="Models\LoginModels\LoginModel.cs" />
     <Compile Include="Models\PackageModels\PackageModel.cs" />
+    <Compile Include="Models\PackageModels\SavePackageModel.cs" />
     <Compile Include="Models\ServiceModels\ServiceModel.cs" />
     <Compile Include="Utils\PasswordHasher.cs" />
     <Compile Include="ViewModels\BaseGridViewModel.cs" />
@@ -84,6 +90,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PackagesViewModel.cs" />
+    <Compile Include="ViewModels\SavePackageViewModel.cs" />
     <Compile Include="ViewModels\SaveServiceViewModel.cs" />
     <Compile Include="ViewModels\ServiceViewModel.cs" />
     <Compile Include="Views\UserControls\PackagesUserControl.xaml.cs">
@@ -103,6 +110,9 @@
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SavePackageWindow.xaml.cs">
+      <DependentUpon>SavePackageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\SaveServiceWindow.xaml.cs">
       <DependentUpon>SaveServiceWindow.xaml</DependentUpon>
@@ -159,13 +169,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Windows\SavePackageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\SaveServiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\PackageCommands\" />
     <Folder Include="Views\Components\" />
   </ItemGroup>
   <ItemGroup>

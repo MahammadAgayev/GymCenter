@@ -8,5 +8,7 @@ namespace GymCenter.Core.Domain.Abstract
     {
         List<PackageService> GetByPackageId(int packageId);
         List<PackageService> GetByServiceId(int serviceId);
+
+        void Delete(PackageService packageService);
     }
 }
