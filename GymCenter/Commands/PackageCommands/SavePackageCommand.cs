@@ -38,6 +38,8 @@ namespace GymCenter.Commands.PackageCommands
 
         private void AddToDb(Package package, SavePackageModel model)
         {
+            Kernel.DB.PackageRepository.Add(package);
+
             foreach (var serviceModel in model.Services)
             {
                 if (serviceModel.IsSelected)
@@ -57,13 +59,16 @@ namespace GymCenter.Commands.PackageCommands
                     Kernel.DB.PackageServiceRepository.Add(packageService);
                 }
             }
-
-            Kernel.DB.PackageRepository.Add(package);
         }
 
         private void Update(Package package, SavePackageModel model)
         {
             var currentPackage = Kernel.DB.PackageRepository.Get(package.Id);
+
+            #region Example 1 
+            // Eger servisin Id-si current lerin icinde varsa
+            // Eger servisin id-si currentlerde var indi yoxdusa silirem
+            // Eger servisin id-si currentlerde yoxdu indi varsa elave edirem
 
             //foreach (var serviceModel in model.Services)
             //{
@@ -96,7 +101,9 @@ namespace GymCenter.Commands.PackageCommands
             //    }
             //}
 
-            foreach(var srv in currentPackage.Services)
+            #endregion
+
+            foreach (var srv in currentPackage.Services)
             {
                 Kernel.DB.PackageServiceRepository.Delete(new PackageService { Package = package, Service = srv });
             }
@@ -109,9 +116,5 @@ namespace GymCenter.Commands.PackageCommands
 
             Kernel.DB.PackageRepository.Update(package);
         }
-
-        // Eger servisin Id-si current lerin icinde varsa
-        // Eger servisin id-si currentlerde var indi yoxdusa silirem
-        // Eger servisin id-si currentlerde yoxdu indi varsa elave edirem
     }
 }

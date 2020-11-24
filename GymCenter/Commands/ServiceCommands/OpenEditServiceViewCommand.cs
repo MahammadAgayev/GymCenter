@@ -26,6 +26,12 @@ namespace GymCenter.Commands.ServiceCommands
 
             window.lblTitle.Content = "Edit Service";
 
+            if(_serviceViewModel.SelectedServiceModel == null)
+            {
+                Warning("Please select service");
+                return;
+            }
+
             viewModel.ServiceModel = _serviceViewModel.SelectedServiceModel;
 
             window.ShowDialog();

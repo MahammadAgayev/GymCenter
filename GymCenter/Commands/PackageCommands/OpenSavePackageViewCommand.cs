@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace GymCenter.Commands.PackageCommands
 {
-    public class OpenSavePackageViewCommand : BaseOpenPackageCommand
+    public class OpenSavePackageViewCommand : BasePackageCommand
     {
         public OpenSavePackageViewCommand(PackagesViewModel viewModel, PackageManager packageManager) : base(viewModel, packageManager)
         {

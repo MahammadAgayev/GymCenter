@@ -137,6 +137,18 @@ namespace GymCenter.Core.DataAccess.SqlSever
             }
         }
 
+        public void Delete(int id)
+        {
+            using(var con = SqlConnection)
+            {
+                var cmd = new SqlCommand("delete from packages where Id = @id", con);
+
+                cmd.Parameters.AddWithValue("id", id);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
 
         private Package GetFromReader(SqlDataReader reader)
         {

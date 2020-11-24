@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace GymCenter.Commands
@@ -13,5 +14,10 @@ namespace GymCenter.Commands
         }
 
         public abstract void Execute(object parameter);
+
+        protected void Warning(string message, string caption = "Warning")
+        {
+            MessageBox.Show(message, caption, MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }

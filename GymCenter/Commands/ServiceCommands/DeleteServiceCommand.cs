@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows;
 using GymCenter.Core;
 using GymCenter.ViewModels;
 
@@ -19,10 +15,34 @@ namespace GymCenter.Commands.ServiceCommands
 
         public override void Execute(object parameter)
         {
-            var selectedService = _serviceViewModel.SelectedServiceModel;
-            Kernel.DB.ServiceRepository.Delete(selectedService.Id);
+            var db = Kernel.DB;
 
-            _serviceViewModel.ServiceModels.Remove(selectedService);
+            var selectedService = _serviceViewModel.SelectedServiceModel;
+
+            var packages = db.PackageRepository.Get();
+
+            bool canDelete = true;
+
+            foreach (var pkg in packages)
+            {
+                foreach (var svc in pkg.Services)
+                {
+                    if(svc.Id ==  selectedService.Id)
+                    {
+                        canDelete = false;
+                    }
+                }
+            }
+
+            if(canDelete)
+            {
+                db.ServiceRepository.Delete(selectedService.Id);
+                _serviceViewModel.ServiceModels.Remove(selectedService);
+            }
+            else
+            {
+                Warning("Cannot delete service because it's used by package.");
+            }
         }
     }
 }

@@ -8,13 +8,13 @@ using GymCenter.ViewModels;
 
 namespace GymCenter.Commands.PackageCommands
 {
-    public abstract class BaseOpenPackageCommand : BaseCommand
+    public abstract class BasePackageCommand : BaseCommand
     {
         protected PackagesViewModel _packageViewModel;
 
         protected PackageManager _pacakgeManager;
 
-        public BaseOpenPackageCommand(PackagesViewModel viewModel, PackageManager packageManager)
+        public BasePackageCommand(PackagesViewModel viewModel, PackageManager packageManager)
         {
             _packageViewModel = viewModel;
             _pacakgeManager = packageManager;

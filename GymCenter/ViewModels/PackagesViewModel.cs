@@ -13,6 +13,7 @@ namespace GymCenter.ViewModels
         {
             OpenSavePackage = new OpenSavePackageViewCommand(this, new Managers.PackageManager());
             OpenEditPackage = new OpenEditPackageViewCommand(this, new Managers.PackageManager());
+            DeletePackage = new DeletePackageCommand(this, new Managers.PackageManager());
         }
 
         public ICommand OpenSavePackage { get; set; }

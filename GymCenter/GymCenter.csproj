@@ -64,7 +64,8 @@
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\ConfigurationCommands\SaveCommand.cs" />
     <Compile Include="Commands\LoginCommands\LoginCommand.cs" />
-    <Compile Include="Commands\PackageCommands\BaseOpenPackageCommand.cs" />
+    <Compile Include="Commands\PackageCommands\BasePackageCommand.cs" />
+    <Compile Include="Commands\PackageCommands\DeletePackageCommand.cs" />
     <Compile Include="Commands\PackageCommands\OpenEditPackageViewCommand.cs" />
     <Compile Include="Commands\PackageCommands\OpenSavePackageViewCommand.cs" />
     <Compile Include="Commands\PackageCommands\SavePackageCommand.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Models\PackageModels\PackageModel.cs" />
     <Compile Include="Models\PackageModels\SavePackageModel.cs" />
     <Compile Include="Models\ServiceModels\ServiceModel.cs" />
+    <Compile Include="Utils\LogHelper.cs" />
     <Compile Include="Utils\PasswordHasher.cs" />
     <Compile Include="ViewModels\BaseGridViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

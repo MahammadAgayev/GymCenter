@@ -8,7 +8,7 @@ using GymCenter.Views.Windows;
 
 namespace GymCenter.Commands.PackageCommands
 {
-    public class OpenEditPackageViewCommand : BaseOpenPackageCommand
+    public class OpenEditPackageViewCommand : BasePackageCommand
     {
         public OpenEditPackageViewCommand(PackagesViewModel packagesViewModel, PackageManager packageManager) 
             : base(packagesViewModel, packageManager)  
@@ -18,6 +18,13 @@ namespace GymCenter.Commands.PackageCommands
         public override void Execute(object parameter)
         {
             var selectedModel = _packageViewModel.SelectedPackage;
+
+            if(selectedModel == null)
+            {
+                Warning("Please select package to delete");
+
+                return;
+            }
 
             var window = new SavePackageWindow();
 
