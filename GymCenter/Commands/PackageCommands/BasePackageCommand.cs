@@ -20,8 +20,11 @@ namespace GymCenter.Commands.PackageCommands
             _pacakgeManager = packageManager;
         }
 
+
+        //som eh
         protected void RefreshWindow()
         {
+            int a = 6;
             _packageViewModel.PackageModels.Clear();
 
             var models = _pacakgeManager.GetModels();
